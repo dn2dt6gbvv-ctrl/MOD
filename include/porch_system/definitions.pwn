@@ -1,0 +1,102 @@
+#define MAX_PORCHES 500
+#define MAX_PORCH_HOUSES 1000
+
+enum 
+{
+    DIALOG_PORCH_MENU = 2700,
+	DIALOG_BUY_PORCH_HOUSE,
+	DIALOG_PORCH_HOUSE_MENU,
+	DIALOG_PORCH_SELL,
+	DIALOG_PORCH_PAY
+};
+
+enum e_porch
+{
+	pID,
+Float:pEnterX,
+Float:pEnterY,
+Float:pEnterZ,
+Float:penter_X,
+Float:penter_Y,
+Float:penter_Z,
+Float:penter_Fa,
+Float:pCarX,
+Float:pCarY,
+Float:pCarZ,
+Float:pCarA,
+	pType,
+	pFirstFlat,
+	pMaxPorch,
+	enter_pickup,
+    exit_area,
+	menu_area,
+	pMIcon
+}
+
+new PorchInfo[MAX_PORCHES][e_porch];
+
+new Float:coord_porch_class[][4] =
+{
+
+	{595.2775,561.3839,1502.4406,262.2386},
+	{599.3192,564.0471,1502.4406,182.9645},
+	{606.3992,563.9944,1502.4481,172.3107},
+	{608.8882,561.4683,1502.4481,88.9398},
+	{606.3802,558.5872,1502.4481,4.0261},
+	{595.1376,561.2693,1506.8153,258.1186},
+	{599.2026,563.9285,1506.8153,185.1107},
+	{606.3308,563.9515,1506.8153,183.8566},
+	{608.8532,561.4613,1506.8153,90.1692},
+	{606.4705,558.5645,1506.8153,352.4085}
+};
+
+new Float:coord_porch_class_l[][4] =
+{
+
+	{187.8275,1109.9817,2501.2371,1.0848},
+	{185.5061,1112.1517,2501.2371,277.9060},
+	{187.7989,1114.3916,2501.2371,184.5313},
+	{204.5682,1112.2749,2501.2371,91.4702}, 
+	{204.5819,1112.1948,2505.5339,86.4565}, 
+	{194.4107,1109.8132,2505.5339,6.2425}, 
+	{188.0814,1109.9841,2505.5339,3.7360}, 
+	{185.5450,1112.2637,2505.5339,272.7235},
+	{204.5709,1112.1257,2509.8308,96.6289}, 
+	{194.4546,1109.7366,2509.8308,0.7480}, 
+	{187.8077,1110.0017,2509.8308,0.7478}, 
+	{185.4337,1112.3243,2509.8308,268.9402}, 
+	{204.4530,1112.1699,2514.1199,97.0641}, 
+	{194.3970,1109.9690,2514.1199,356.9647}, 
+	{187.9715,1109.9401,2514.1199,0.0981}, 
+	{185.5593,1112.1481,2514.1199,269.2306}, 
+	{204.5426,1112.0957,2518.4011,93.1356},
+	{194.4440,1110.1022,2518.4011,2.8944}, 
+	{187.8645,1109.9987,2518.4011,0.7011}, 
+	{185.5926,1112.2819,2518.4011,267.0135}
+};
+
+new TOTALPORCH, totalPorchHouse;
+
+enum e_porch_house
+{
+	hID,
+Float:hEntrx,
+Float:hEntry,
+Float:hEntrz,
+Float:hEntrFa,
+Float:hSpawn_X,
+Float:hSpawn_Y,
+Float:hSpawn_Z,
+Float:hSpawn_Fa,
+	hOwner[32],
+	hOwnerID,
+	hBank,
+	hPrice,
+    hClass,
+    hPay,
+    hLock,
+	hPorch,
+    h_exit_area,
+	h_area
+}
+new PorchHouseInfo[MAX_PORCH_HOUSES][e_porch_house];
